@@ -11,7 +11,7 @@ function Write-Theme {
     $lastColor = $sl.Colors.PromptBackgroundColor
     $prompt += Write-Prompt -Object "╭" -ForegroundColor $sl.Colors.PromptIndicatorForegroundColor1
 
-    $prompt = Write-Prompt -Object " $($sl.PromptSymbols.StartSymbol) " -ForegroundColor $sl.Colors.PromptForegroundColor -BackgroundColor $sl.Colors.PromptUserBackgroundColor
+    $prompt = Write-Prompt -Object " $($sl.PromptSymbols.StartSymbol) " -ForegroundColor $sl.Colors.PromptForegroundColor -BackgroundColor DarkRed
     $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.PromptIndicatorForegroundColor3 -BackgroundColor $sl.Colors.PromptUserBackgroundColor
     #check for elevated prompt
     If (Test-Administrator) {
@@ -80,7 +80,7 @@ function Write-Theme {
 }
 
 $sl = $global:ThemeSettings #local settings
-$sl.PromptSymbols.StartSymbol = [char]::ConvertFromUtf32(0xe70c)
+$sl.PromptSymbols.StartSymbol = [char]::ConvertFromUtf32(0xe70f)
 $sl.PromptSymbols.PromptIndicator = [char]::ConvertFromUtf32(0x276F)
 $sl.PromptSymbols.SegmentForwardSymbol = "" # [char]::ConvertFromUtf32(0xE0B0) #(0xE0B4)
 $sl.PromptSymbols.SegmentBackwardSymbol = [char]::ConvertFromUtf32(0xE0B2)
